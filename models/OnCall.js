@@ -2,15 +2,14 @@ const mongoose = require('mongoose');
 
 const onCallSchema = mongoose.Schema(
   {
-    title: { type: String, required: true }, // e.g., "March 2024 Roster"
-    month: { type: String, required: true },
-    fileUrl: { type: String, required: true }, // Base64 or URL
-    fileType: { type: String, default: 'img' },
+    doctorName: { type: String, required: true },
+    specialty: { type: String, required: true },
+    date: { type: String, required: true }, // Storing as YYYY-MM-DD string for easy comparison
     uploadedBy: { type: String },
   },
   {
     timestamps: true,
-    toJSON: { virtuals: true }
+    toJSON: { virtuals: true },
   }
 );
 
